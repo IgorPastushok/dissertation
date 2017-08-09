@@ -1,0 +1,29 @@
+\begin{landscape}
+	\begin{center}
+		\begin{longtable}[!h]{| C{8cm} | C{14cm} | C{3cm} |}
+		    \caption{Аппроксимации функции MOS для передачи видеоинформации}
+			\label{tab:appraximations}
+			\hline
+			Формула & Описание & Источник \\
+			\hline
+			\multicolumn{3}{|c|}{Процент замирания воспроизведения потока (Stalling, Rebuffering Percentage)}\\
+			\hline
+			${{g}_{i}}=\underset{t~\to \infty }{\mathop{\lim }}\,\frac{r{{b}_{i}}\left( t \right)}{r{{b}_{i}}\left( t \right)+{{d}_{i}}\left( t \right)}$\newline
+		$Minimize:\underset{i}{\mathop \sum }\,{{g}_{i}}$  & $g_i$~--~процент времени, когда пользователь наблюдал прерывание воспроизведения потока; \newline $rb_i(t)$~--~длительность замираний воспроизведения потока за время $t$; \newline $d_i(t)$~--~длительность просмотренной последовательности за время $t$. & \cite{QoE_Ozgur,past_tur}\\
+			\hline
+			${{q}_{i}}=\underset{t~\to \infty }{\mathop{\text{lim}}}\,\frac{{{w}_{i}}\left( t \right)}{{{d}_{i}}\left( t \right)}$ \newline
+		$Minimize:\underset{i}{\mathop \sum }\,{{q}_{i}}$  & $w_i(t)$~--~длительность ожидания в течении времени t, учитывающее начальные буферизации и прерывания воспроизведения потока & \cite{Bakin_Globecom}\\
+			\hline
+			\multicolumn{3}{|c|}{Взвешенные суммы характеристик воспроизведения}\\
+			\hline
+			$MO{{S}_{i}}={{f}_{RATE}}\left( {{R}_{i}} \right)$\newline $Maximize:\sum\limits_{i}{MO{{S}_{i}}}$ & $R_i(t)$~--~битовая скорость просматриваемого потока. & \cite{Essaili_Rate} \\
+			\hline
+			${{f}_{i}}=~{{k}_{1}}\ln {{R}_{i}}-{{k}_{2}}\frac{r{{b}_{i}}\left( t \right)}{{{d}_{i}}\left( t \right)}$\newline $Maximize:\underset{i}{\mathop \sum }\,{{f}_{i}}$ & $R_i(t)$~--~битовая скорость просматриваемого потока;\newline $k_1,k_2$~--~весовые коэффициенты приоритета функции от битовой скорости и замираний воспроизведения соответственно, причем $k_1 << k_2$. & \cite{Suai2015} \\
+			\hline
+			$Minimize:W\lambda -~\theta ~$ & $\lambda$~--~средний процент времени замирания воспроизведения по всем пользователям;\newline $\theta$~--~среднее значение скорости битовой репрезентации по всем пользователям; \newline $W$~--~весовой коэффициент приоритета замирания воспроизведения, сравним со значением $\theta$& \cite{7179392} \\
+			\hline
+			$Qo{{E}_{i}}\left[ t \right]={{W}_{1}}\log \left({{R}_{i}}\left[ t \right]~-{{W}_{2}}{{\left( Bu{{f}_{i}}\left[ t \right]-Bu{{f}_{thr}} \right)}^{2}}-{{W}_{3}}{{\left( {{R}_{i}}\left[ t \right]-{{R}_{i}}\left[ t-1 \right] \right)}^{2}}\right)$ \newline $Maximize:\underset{i}{\mathop \sum }\,Qo{{E}_{i}}\left[ t \right]$ & &  \\
+			\hline
+		\end{longtable}
+	\end{center}
+\end{landscape}

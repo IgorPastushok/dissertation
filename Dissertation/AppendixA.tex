@@ -1,0 +1,39 @@
+\begin{landscape}
+\chapter{АППРОКСИМАЦИИ ФУНКЦИИ MOS ДЛЯ ПЕРЕДАЧИ ВИДЕОДАННЫХ}
+\label{AppA}
+   \begin{longtable}[H]{| C{10cm} | C{13cm} | C{2cm} |}
+    \caption{Аппроксимации функции MOS для передачи видеоданных}\label{tab:appraximations} \\
+    \hline
+    Формула & Описание & Источник \\
+    \hline
+    \multicolumn{3}{|c|}{Процент замирания воспроизведения потока (Stalling, Rebuffering Percentage)}\\
+    \hline
+    ${{g}_{i}}=\underset{t~\to \infty }{\mathop{\lim }}\,\frac{r{{b}_{i}}\left( t \right)}{r{{b}_{i}}\left( t \right)+{{d}_{i}}\left( t \right)}$\newline
+$Minimize:\underset{i}{\mathop \sum }\,{{g}_{i}}$  & $g_i$~--~процент времени, когда пользователь наблюдал прерывание воспроизведения потока; \newline $rb_i(t)$~--~длительность замираний воспроизведения потока за время $t$; \newline $d_i(t)$~--~длительность просмотренной последовательности за время $t$. & \cite{QoE_Ozgur,past_tur}\\
+    \hline
+    ${{q}_{i}}=\underset{t~\to \infty }{\mathop{\text{lim}}}\,\frac{{{w}_{i}}\left( t \right)}{{{d}_{i}}\left( t \right)}$ \newline
+$Minimize:\underset{i}{\mathop \sum }\,{{q}_{i}}$  & $w_i(t)$~--~длительность ожидания в течении времени t, учитывающее начальные буферизации и прерывания воспроизведения потока. & \cite{Bakin_Globecom}\\
+    \hline
+    \multicolumn{3}{|c|}{Взвешенные суммы характеристик воспроизведения}\\
+    \hline
+    $MO{{S}_{i}}={{f}_{RATE}}\left( {{R}_{i}} \right)$\newline $Maximize:\sum\limits_{i}{MO{{S}_{i}}}$ & $R_i(t)$~--~битовая скорость просматриваемого потока. & \cite{Essaili_Rate} \\
+    \hline
+    ${{f}_{i}}=~{{k}_{1}}\ln {{R}_{i}}-{{k}_{2}}\frac{r{{b}_{i}}\left( t \right)}{{{d}_{i}}\left( t \right)}$\newline $Maximize:\underset{i}{\mathop \sum }\,{{f}_{i}}$ & $R_i(t)$~--~битовая скорость просматриваемого потока;\newline $k_1,k_2$~--~весовые коэффициенты приоритета функции от битовой скорости и замираний воспроизведения соответственно, причем $k_1 << k_2$. & \cite{Suai2015} \\
+    \hline
+    $Minimize:W\lambda -~\theta ~$ & $\lambda$~--~средний процент времени прерывания воспроизведения по всем пользователям;\newline $\theta$~--~среднее значение скорости битовой репрезентации по всем пользователям; \newline $W$~--~весовой коэффициент приоритета прерывания воспроизведения, сравним со значением $\theta$.& \cite{7179392} \\
+    \hline
+    $Qo{{E}_{i}}\left[ t \right]={{W}_{1}}$\newline$\log ({{R}_{i}}\left[ t \right]~-{{W}_{2}}{{\left( Bu{{f}_{i}}\left[ t \right]-Bu{{f}_{thr}} \right)}^{2}}$\newline$-{{W}_{3}}{{\left( {{R}_{i}}\left[ t \right]-{{R}_{i}}\left[ t-1 \right] \right)}^{2}})$ \newline $Maximize:\underset{i}{\mathop \sum }\,Qo{{E}_{i}}\left[ t \right]$ & $W_1, W_2,W_3$~--~весовые коэффициенты;\newline $R_i[t]$~--~битовая скорость в момент времени $t$;\newline $Buf_i[t]$~--~уровень буфера в момент времени $t$;\newline $Buf_{thr}$~--~ пороговое значение уровня буфера. & \cite{widash}  \\
+    \hline
+    $MO{{S}_{i}}=\frac{{{a}_{1}}+{{a}_{2}}Fr{{R}_{i}}+{{a}_{3}}\log \left( R_{i}^{TCP} \right)}{1+{{a}_{4}}P{{L}_{i}}+{{a}_{5}}{{\left( P{{L}_{i}} \right)}^{2}}}$\newline$Maximize:\sum\limits_{i}{MO{{S}_{i}}}$ & $a_j$~--~коэффициенты, зависящие от характеристик просматриваемого контента;\newline $FrR_i$~--~частота кадров потока; $R_{i}^{TCP}$~--~скорость получения информации;\newline $P{{L}_{i}}$~--~вероятность потери пакета. & \cite{5508802} \\
+    \hline
+    $MO{{S}_{i}}=\frac{b-a}{1+{{c}_{0}}{{\left( R_{i}^{TCP} \right)}^{-c1}}{{\left( {{c}_{2}} \right)}^{SU{{D}_{i}}}}}+a$\newline$Maximize:\underset{i}{\mathop \sum }\,MO{{S}_{i}}$ & $a,b$~--~нормирующие константы;\newline $c_j$~--~константы, подобранные в ходе эксперимента;\newline $SU{{D}_{i}}$~--~длительность ожидания начала воспроизведения. & \cite{6825149,6883466} \\
+    \hline
+    $\left\{ \begin{matrix}
+   MO{{S}_{Res}}\left( Res{{l}_{i}} \right)=1.475\log \left( Res{{l}_{i}} \right)-6.15  \\
+   MO{{S}_{Reb}}\left( RebRat{{e}_{i}} \right)=0.738~{{e}^{-RebRat{{e}_{i}}}}  \\
+   MO{{S}_{SUD}}\left( SU{{D}_{i}} \right)=-0.02~SU{{D}_{i}}+2.53  \\
+\end{matrix} \right.$\newline$MO{{S}_{i}}=0.174~MO{{S}_{Res}}\left( Res{{l}_{i}} \right)MO{{S}_{Reb}}{{\left( RebRate \right)}_{i}}\cdot$\newline$\cdot MO{{S}_{SUD}}\left( SU{{D}_{i}} \right)$\newline$Maximize:\sum\limits_{i}{MO{{S}_{i}}}$ & $Res{{l}_{i}}$~--~разрешение репрезентации;\newline$RebRate_i$~--~отношение времени просмотра к длительности опустошения буфера. & \cite{Chen_Chang_Wei} \\
+    \hline
+
+\end{longtable}
+\end{landscape}
