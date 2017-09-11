@@ -1,4 +1,4 @@
-\chapter{ОПТИМИЗАЦИЯ ПЕРЕДАЧИ АДАПТИВНЫХ ВИДЕОПОТОКОВ В БЕСПРОВОДНЫХ ЦЕНТРАЛИЗОВАННЫХ СЕТЯХ}
+\chapter{ИССЛЕДОВАНИЕ ПРОИЗВОДИТЕЛЬНОСТИ БЕСПРОВОДНЫХ ЦЕНТРАЛИЗОВАННЫХ СЕТЕЙ ДЛЯ ПЕРЕДАЧИ АДАПТИВНЫХ ВИДЕОПОТОКОВ}
 \label{chap4}
 
 \section{Вводные замечания}
@@ -267,7 +267,7 @@ $$\mu_0 \left[\sum\limits_{i=1}^{N} {\frac{\tilde{a}_i}{\mathrm{max} \left(\sqrt
 \end{center}
 \end{figure}
 
-Следующим этапом рассмотрения решения оптимизационной задачи (\ref{eq:optim_problem_bakin_lemma}) является оценка сложности полученного решения. Численный алгоритм \ref{alg:algorithm_numerical_solution} обладает логарифмической сложностью: $O(N log_2 [r-k]), r \to \infty, k \to \infty, N \to \infty$. Однако, значения $r$ и $k$ заранее неизвестны и зависят от входных условий задачи. В ходе тестирования алгоритма \ref{alg:algorithm_numerical_solution}, применительно к задачам передачи видео, значения разности $[r - k]$ не превышали $N$. На основе данного факта справедливо следующее: сложность алгоритма \ref{alg:algorithm_numerical_solution}, нахождения решения оптимизационной задачи (\ref{eq:optim_problem_bakin_lemma}), является сопоставимой со сложностью алгоритма \ref{alg:algorithm_lemma}: $O(N log_2 N), N \to \infty$ (подраздел \ref{chap3:GeneralizedFKSP}, таблица \ref{tab:nonadaptiveComplexity}).
+Следующим этапом рассмотрения решения оптимизационной задачи (\ref{eq:optim_problem_bakin_lemma}) является оценка сложности полученного решения. Численный алгоритм \ref{alg:algorithm_numerical_solution} обладает логарифмической сложностью от требуемой точности нахождения решения уравнения (\ref{eq:optim_problem_bakin_lemma_solution_eq}) \cite{convex_opt, Bakin_Globecom}. На основе данного факта справедливо следующее: сложность алгоритма \ref{alg:algorithm_numerical_solution}, нахождения решения оптимизационной задачи (\ref{eq:optim_problem_bakin_lemma}), является сопоставимой со сложностью алгоритма \ref{alg:algorithm_lemma}: $O(N log_2 N), N \to \infty$ (подраздел \ref{chap3:GeneralizedFKSP}, таблица \ref{tab:nonadaptiveComplexity}).
 
 \section{Нижняя граница отношения длительности буферизации к просмотру при передаче адаптивных видеопотоков}
 \label{chap4:LowerBoundForQ}
