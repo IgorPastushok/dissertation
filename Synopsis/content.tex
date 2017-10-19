@@ -189,7 +189,7 @@ $$\bar{g}\left(A\right) = \frac{1}{N}\left(\sum\nolimits_{i=1}^{N} {g_i\left(A\r
 Данная задача может быть представлена в виде оптимизационной задачи нелинейного программирования (\ref{eq:optim_problem_g}), решение которой определяет нижнюю границу по множеству алгоритмов $\mathcal{A}$.
 \begin{equation}
 \begin{array}{l}
-\text{ \textbf{Минимизировать:} } G = \sum\nolimits_{i=1}^{N} {g_i} \\
+\text{ \textbf{Минимизировать:} } G = \frac{1}{N}\sum\nolimits_{i=1}^{N} {g_i} \\
 \text{ \textbf{При условии:} }\\
 \begin{cases}
 \sum\nolimits_{i=1}^{N} {\frac{K_i (1-g_i)}{g_i + \gamma (1-g_i)}} \leq 1 \\
@@ -209,11 +209,11 @@ g_i \in [0, 1], i=\overline{1,N}
   \caption{: Планирование ресурсов для минимизации критерия $G$ в каждый момент времени $t$}
 	\label{alg:sched}
   \begin{algorithmic}[1]
-	\item Вычисление оценок параметров системы передачи видеоданных для множества активных пользователей $\mathcal{U}: \hat{R_i}(t), \hat{C_i}(t), i \in \mathcal{U}$;
-	\item Нахождение решения оптимизационной задачи (\ref{eq:optim_problem_g}) для множества пользователей $\mathcal{U}:\hat{G}(t) = \{\hat{g}_i(t), i \in \mathcal{U}\}$, при $K_i = \hat{R_i}(t) / \hat{C_i}(t)$ и $\gamma = 1$;
+	\item Вычисление оценок параметров системы передачи видеоданных для множества активных пользователей $\mathcal{U}(t): \hat{R_i}(t), \hat{C_i}(t), i \in \mathcal{U}(t)$;
+	\item Нахождение решения оптимизационной задачи (\ref{eq:optim_problem_g}) для множества пользователей $\mathcal{U}(t):\hat{G}(t) = \{\hat{g}_i(t), i \in \mathcal{U}(t)\}$, при $K_i = \hat{R_i}(t) / \hat{C_i}(t)$ и $\gamma = 1$;
 	\item Вычисление долей беспроводного канала:$$\alpha_i(t) = \begin{cases}
-					\frac{\hat{R_i}(t) (1 - \hat{g}_i(t)) + S^{min}}{\hat{C_i}(t)}, & i \in \mathcal{U} \\
-					0, & i \notin \mathcal{U}
+					\frac{\hat{R_i}(t) (1 - \hat{g}_i(t)) + S^{min}}{\hat{C_i}(t)}, & i \in \mathcal{U}(t) \\
+					0, & i \notin \mathcal{U}(t)
 					\end{cases}, i = \overline{1,N};$$
 	\item Распределение ресурсов радиоканала с учетом значений $\alpha_i(t), i = \overline{1,N}$.
   \end{algorithmic}
@@ -277,7 +277,7 @@ Q = \inf\limits_{A,B: \overline{R}\left(A,B\right) \geq R_{avg}, A \in \mathcal{
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../Dissertation/images/Chapter4/10_Users_v2.pdf}
-\caption{Производительность известных алгоритмов планирования при передаче адаптивного видео в сравнении с нижней границей}
+\caption{Сравнение производительности известных алгоритмов планирования при передаче адаптивного видео с нижней границей}
 \label{fig:Q_PLOT}
 \end{center}
 \end{figure}
@@ -300,7 +300,7 @@ Q = \inf\limits_{A,B: \overline{R}\left(A,B\right) \geq R_{avg}, A \in \mathcal{
 
 %\newpage
 \renewcommand{\refname}{\large Публикации автора по теме диссертации}
-Основное содержание работы изложено в следующих \textbf{публикациях} (статьи 1-2 опубликованы в изданиях, включенных в перечень ВАК, статьи 3-7 индексируются в Scopus):
+Основное содержание работы изложено в следующих \textbf{публикациях} (статьи 1-2 опубликованы в изданиях, включенных в перечень ВАК, работы 3-4 индексируются в Scopus):
 \nocite{*}
 \insertbiblioauthor                          % Подключаем Bib-базы
 %\insertbibliofull
