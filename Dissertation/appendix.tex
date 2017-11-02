@@ -16,7 +16,7 @@
 \input{AppendixA}
 \input{AppendixB}
 \input{AppendixC}
-%\input{AppendixD}
+\input{AppendixD}
 %\chapter{Примеры вставки листингов программного кода} \label{AppendixA}
 %
 %Для крупных листингов есть два способа. Первый красивый, но в нём могут быть проблемы с поддержкой кириллицы (у вас может встречаться в комментариях и
@@ -47,10 +47,10 @@
 %Второй не такой красивый, но без ограничений (см.~листинг~\ref{list:hwplain}).
 %\begin{ListingEnv}[H]
 %    \begin{Verb}
-%        
+%
 %        #include <iostream>
 %        using namespace std;
-%        
+%
 %        int main() //кириллица в комментариях
 %        {
 %            cout << "Привет, мир" << endl;
@@ -101,7 +101,7 @@
 %    list(set = set, get = get,
 %    setSolved = setSolved,
 %    getSolved = getSolved)
-%    
+%
 %}
 %
 %
@@ -120,7 +120,7 @@
 %    data <- x$get()
 %    i <- solve(data, ...)
 %    x$setSolved(i)
-%    i  
+%    i
 %}
 %\end{lstlisting}
 %
@@ -138,8 +138,8 @@
 %Вот размещается длинная таблица:
 %\fontsize{10pt}{10pt}\selectfont
 %\begin{longtable}[c]{|l|c|l|l|}
-%% \caption{Описание входных файлов модели}\label{Namelists} 
-%%\\ 
+%% \caption{Описание входных файлов модели}\label{Namelists}
+%%\\
 % \hline
 % %\multicolumn{4}{|c|}{\textbf{Файл puma\_namelist}}        \\ \hline
 % Параметр & Умолч. & Тип & Описание               \\ \hline
@@ -150,7 +150,7 @@
 % \multicolumn{4}{|r|}{\small\slshape продолжение следует}  \\ \hline
 %                                              \endfoot        \hline
 %                                              \endlastfoot
-% \multicolumn{4}{|l|}{\&INP}        \\ \hline 
+% \multicolumn{4}{|l|}{\&INP}        \\ \hline
 % kick & 1 & int & 0: инициализация без шума ($p_s = const$) \\
 %      &   &     & 1: генерация белого шума                  \\
 %      &   &     & 2: генерация белого шума симметрично относительно \\
@@ -227,7 +227,7 @@
 %  & & & экватора    \\
 % mars & 0 & int & 1: инициализация модели для планеты Марс     \\
 % \hline
-%  %& & & $\:$ \\ 
+%  %& & & $\:$ \\
 % \multicolumn{4}{|l|}{\&SURFPAR}        \\ \hline
 %kick & 1 & int & 0: инициализация без шума ($p_s = const$) \\
 %      &   &     & 1: генерация белого шума                  \\
@@ -273,8 +273,8 @@
 %      &   &     & 1: генерация белого шума                  \\
 %      &   &     & 2: генерация белого шума симметрично относительно \\
 %  & & & экватора    \\
-% mars & 0 & int & 1: инициализация модели для планеты Марс     \\ 
-% \hline 
+% mars & 0 & int & 1: инициализация модели для планеты Марс     \\
+% \hline
 %\end{longtable}
 %
 %\normalsize% возвращаем шрифт к нормальному
@@ -289,7 +289,7 @@
 %    \begin{longtable}[c]{|l|c|l|l|}
 %	\caption{Наименование таблицы средней длины}%
 %    \label{tbl:test5}% label всегда желательно идти после caption
-%    \\ 
+%    \\
 %    \hline
 %     %\multicolumn{4}{|c|}{\textbf{Файл puma\_namelist}}        \\ \hline
 %     Параметр & Умолч. & Тип & Описание               \\ \hline
@@ -304,7 +304,7 @@
 %%\hline
 %                                                  \endfoot        \hline
 %                                                  \endlastfoot
-%     \multicolumn{4}{|l|}{\&INP}        \\ \hline 
+%     \multicolumn{4}{|l|}{\&INP}        \\ \hline
 %     kick & 1 & int & 0: инициализация без шума ($p_s = const$) \\
 %          &   &     & 1: генерация белого шума                  \\
 %          &   &     & 2: генерация белого шума симметрично относительно \\
@@ -381,7 +381,7 @@
 %      & & & экватора    \\
 %     mars & 0 & int & 1: инициализация модели для планеты Марс     \\
 %     \hline
-%      %& & & $\:$ \\ 
+%      %& & & $\:$ \\
 %     \multicolumn{4}{|l|}{\&SURFPAR}        \\ \hline
 %    kick & 1 & int & 0: инициализация без шума ($p_s = const$) \\
 %          &   &     & 1: генерация белого шума                  \\
@@ -427,8 +427,8 @@
 %          &   &     & 1: генерация белого шума                  \\
 %          &   &     & 2: генерация белого шума симметрично относительно \\
 %      & & & экватора    \\
-%     mars & 0 & int & 1: инициализация модели для планеты Марс     \\ 
-%     \hline 
+%     mars & 0 & int & 1: инициализация модели для планеты Марс     \\
+%     \hline
 %    \end{longtable}
 %\normalsize% возвращаем шрифт к нормальному
 %\section{Очередной подраздел приложения} \label{AppendixB3}
